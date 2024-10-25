@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRIEND FC</title>
+     
+    <style>
+        /* 로그인 스타일 추가 */
+        .login-container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 100px auto;
+        }
+
+        .login-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .login-container input, .login-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        /* 기존 스타일 유지 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    </style>
+
+    <script>
+        function checkLogin() {
+            // 로그인에 허용되는 이름 목록
+            const allowedNames = ["홍길동", "이순신", "김철수"]; // 허용할 이름을 추가하세요
+            const inputName = document.getElementById("username").value;
+            const message = document.getElementById("message");
+        
+            // 이름을 확인하여 접근 허용 여부 결정
+            if (allowedNames.includes(inputName)) {
+                message.textContent = "환영합니다!";
+                message.style.color = "green";
+                
+                // 로그인 성공 시 홈페이지로 리다이렉트
+                window.location.href = "https://apple-melon.github.io/FriendFC/";
+            } else {
+                message.textContent = "접근이 제한되었습니다. 올바른 이름을 입력하세요.";
+                message.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- 로그인 영역 -->
+    <div class="login-container" id="loginContainer">
+        <h1>로그인</h1>
+        <input type="text" id="username" placeholder="이름을 입력하세요">
+        <button onclick="checkLogin()">확인</button>
+        <p id="message"></p>
+    </div>
+
+    <!-- 메인 콘텐츠 영역 (기본적으로 숨김) -->
+    <div id="mainContent" style="display: none;">
+        <header>
+            <h1 class="team-name">FRIEND FC</h1>
+            <p>팀 소개와 경기 일정을 확인하세요!</p>
+            <img class="logo" src="Friend fc logo_Nero AI_Photo_Face.png" alt="friend fc logo">
+        </header>
+
+        <nav>
+            <a href="https://apple-melon.github.io/FriendFC/">홈</a>
+            <a href="about.html">포지션</a>
+            <a href="teammate.html">팀원 소개</a>
+            <a href="">훈련 일정</a>
+            <a href="">갤러리</a>
+            <a href="">연락처</a>
+        </nav>
+
+        <div>
+            <div class="space"></div>
+            <div class="ending">
+                Copyright &#169; 2024 FRIEND FC. 모든 권리 보유.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
